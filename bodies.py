@@ -6,20 +6,20 @@ from tkinter import *
 import time
 
 	
-def haku():
-	name=[]
+def haku():					# Setion that reads the file
+	name=[]					
 	m=[]
 	x0=[]
 	y0=[]
 	vx0=[]
 	vy0=[]
 	colors=[]
-	file = open('input.dat','r')
-	tiedot = file.readlines()
-	for rivi in tiedot:
-		osarivi = rivi.split()
-		name.append(osarivi[0])
-		m.append(float(osarivi[1]))
+	file = open('input.dat','r')		#The name of the input file should be input.dat
+	tiedot = file.readlines()		#and it should be in a matrix form where colums mean
+	for rivi in tiedot:			#1. Name,2. mass, 3. initial x, 4. initial y
+		osarivi = rivi.split()		#5. initial x velocity, 6. initial y velocity
+		name.append(osarivi[0])		#7. the color of the planet in the simulation
+		m.append(float(osarivi[1]))	#and each rows mean different planet
 		x0.append(float(osarivi[2]))
 		y0.append(-1*float(osarivi[3]))
 		vx0.append(float(osarivi[4]))
